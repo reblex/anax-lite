@@ -1,6 +1,23 @@
 {
+    "name": "knutte/anax-lite",
+    "description": "A small PHP framework.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Wahlström",
+            "email": "simon.otdw@gmail.com"
+        }
+    ],
+
     "require": {
         "anax/request": "^1.0",
-        "anax/url": "^1.0"
+        "anax/url": "^1.0",
+        "anax/router": "^1.0",
+        "anax/response": "^1.0",
+        "anax/view": "^1.0",
+        "mos/cimage": "^0.7.19"
+    },
+    "autoload": {
+        "psr-4": {"Knutte\\": "src/"}
     }
 }
