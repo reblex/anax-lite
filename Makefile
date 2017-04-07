@@ -233,8 +233,8 @@ behat:
 
 
 
-# target: theme              - Execute make build install in theme directory.
+# target: theme              - Execute make build in theme directory.
 .PHONY: theme
 theme:
 	@$(call HELPTEXT,$@)
-	[ ! -d theme ] || $(MAKE) --directory=theme build install
+	[ ! -d theme ] || $(MAKE) -C theme/ build
