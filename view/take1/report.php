@@ -30,7 +30,7 @@
                 <br>
                 Första gången vi jobbade med ett ramverk, alltså i Designkursen,
                 tyckte jag att det var jobbigt. Man hade ingen aning om hur större
-                delen av koden fungerade och man satt bara och nya saker här och
+                delen av koden fungerade och man satt bara och lade till nya saker här och
                 där. Nu däremot kan jag hänga med helt på hur allt fungerar, vilket
                 är vad jag vill, genom att vara med när hela ramverket byggs upp.
                 Jag tycker att det har gått mycket bra, även fast det var ett väldigt
