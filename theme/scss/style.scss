@@ -7,17 +7,19 @@ body {
     background-color: $mainColor;
 }
 
-a {
+a:link {
     color: $linkColor;
 }
 
-a:hover {
-    color: darken($linkColor, 25%);
+a:visited {
+    color: darken($linkColor, 10%);
 }
 
-a:visited {
-    color: lighten($linkColor, 20%);
+a:hover {
+    color: lighten($linkColor, 25%);
 }
+
+
 
 .reportColor {
     background-color: $contrastColor1;
@@ -75,8 +77,11 @@ blockquote {
 
     .text {
         width: 95%;
-        margin: auto;
         margin-top: 20px;
+
+        b {
+            font-size: 24px;
+        }
     }
 }
 
@@ -124,7 +129,7 @@ blockquote {
                     @include headingFont(20px, $white);
                     text-decoration: none;
                     :hover {
-                        border-bottom: 6px solid darken($mainContrastColor, 10%);
+                        border-bottom: 10px solid $mainColor;
                     }
                     .current {
                         color: $mainContrastColor;
@@ -181,6 +186,7 @@ blockquote {
     background: $mainColor;
     height: 170px;
     margin: auto;
+    margin-top: 20px;
 
     .footerCol {
         background-color: $mainColor;
