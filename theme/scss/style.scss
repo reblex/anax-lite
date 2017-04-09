@@ -5,6 +5,7 @@ html,
 body {
     margin: 0;
     background-color: $mainColor;
+    height: 100%;
 }
 
 a:link {
@@ -150,13 +151,16 @@ blockquote {
 .content {
     width: 100%;
     margin: auto;
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
     background-color: $white;
+    min-height: 100%;
 
     main {
         width: 90%;
         margin: auto;
         padding-top: 20px;
+        overflow: auto;
+        padding-bottom: 240px;
 
         .contentHeader {
             width: 85%;
@@ -186,7 +190,10 @@ blockquote {
     background: $mainColor;
     height: 170px;
     margin: auto;
-    margin-top: 20px;
+    // margin-top: 20px;
+    position: relative;
+    margin-top: -170px;
+    clear: both;
 
     .footerCol {
         background-color: $mainColor;
