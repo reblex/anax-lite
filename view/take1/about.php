@@ -7,12 +7,12 @@
     <div class="contentBody">
         <img src="image/code.png" alt="Lines of code" class="codeImg">
 
-        Kursen OOPHP lär ut scriptingspråket PHP och hur det används
+        Kursen OOPHP handlar om scriptingspråket PHP och hur det används
         objektorienterat. Under kursens gång byggs ett mini-ramverk
         upp med hjälp av PHP och andra tillgångar som SASS/LESS,
         Bootstrap och SQL.
         <br><br>
-        Kursens kunskaper kursen lär ut är enligt dbwebb:
+        Kursen lär ut föjande engligt dbwebb:
         <blockquote cite="https://dbwebb.se/kurser/oophp-v3">
             <ul>
                 <li>
