@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:600|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "variables.scss";
+
+@mixin headingFont($size, $color) {
+    font-family: 'Oswald', sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin bodyFont($size, $color) {
+    // font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: $size;
+    color: $color;
+}
+
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

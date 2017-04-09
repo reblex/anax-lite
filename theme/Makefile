@@ -32,8 +32,8 @@ HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) |
 
 
 
-# target: build              - Compile SASS to regular CSS
+# target: build              - Compile scss to minified css
 .PHONY:  build
 build:
 	@$(call HELPTEXT,$@)
-	sass -q style.scss compiled/style.css
+	sass --style compressed scss/style.scss compiled/style.min.css
