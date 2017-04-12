@@ -38,6 +38,10 @@ a:hover {
     background-color: $contrastColor4;
 }
 
+.sessionColor {
+    background-color: $contrastColor5;
+}
+
 .meImg {
     float: right;
     margin-left: 20px;
@@ -160,23 +164,24 @@ blockquote {
 
 /* Sub Menus */
 .nav li li {
-    // display: none;
     font-size: .8em;
-    padding-left: 20px;
-    margin-right: 500px;
-    padding-bottom: 6px;
+    padding-bottom: 12px;
+    min-width: 20px;
+    text-align: center;
+    margin-left: 25px;
 }
 
 .nav li ul {
     padding-top: 20px;
     position: absolute;
+    right: 0;
+    padding-right: 2px;
     display: none;
-    width: inherit;
 }
 
 .nav li:hover ul {
     display: block;
-    text-align: center;
+
 }
 
 

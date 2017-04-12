@@ -32,7 +32,6 @@ class Navbar implements \Anax\Common\ConfigureInterface
 
             $html .= "<li class='$name'>";
             $html .= "<div class='navCircle ${name}Color'></div>";
-
             $html .= "<a href='$url' class='$name $curr'>$text</a>";
 
             // If there are dropdown alternatives.
@@ -43,6 +42,7 @@ class Navbar implements \Anax\Common\ConfigureInterface
                     $dropText = $dropVars["text"];
 
                     $html .= "<li class='drop $dropName'>";
+                    $html .= "<div class='navCircle ${dropName}Color'></div>";
                     $html .= "<a href='$dropUrl'>$dropText</a>";
                     $html .= "</li>";
                 }
