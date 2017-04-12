@@ -1,9 +1,12 @@
 <main>
-    <div class="contentHeader homeColor">
+    <?php
+    @include "contentHeader.php";
+    ?>
+    <!-- <div class="contentHeader homeColor">
         <p class="contentTitle">
             Hem
         </p>
-    </div>
+    </div> -->
     <div class="contentBody">
         <img src="img/Me.png" alt="Simon Wahlström" class="meImg">
         Mitt namn är Simon Wahlström och jag är en för tillfället 20 år gammal

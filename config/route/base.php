@@ -2,27 +2,30 @@
 
 $app->router->add("", function () use ($app) {
     $app->view->add("take1/header", ["title" => "Hem"]);
-    $app->view->add("take1/home");
+    $app->view->add("take1/home", ["colorName" => "homeColor", "contentTitle" => "Hem"]);
     $app->view->add("take1/footer");
 
     $app->response->setBody([$app->view, "render"])->send();
 });
+
 
 $app->router->add("about", function () use ($app) {
     $app->view->add("take1/header", ["title" => "Om"]);
-    $app->view->add("take1/about");
+    $app->view->add("take1/about", ["colorName" => "aboutColor", "contentTitle" => "Om kursen OOPHP"]);
     $app->view->add("take1/footer");
 
     $app->response->setBody([$app->view, "render"])->send();
 });
+
 
 $app->router->add("report", function () use ($app) {
     $app->view->add("take1/header", ["title" => "Redovisning"]);
-    $app->view->add("take1/report");
+    $app->view->add("take1/report", ["colorName" => "reportColor", "contentTitle" => "Redovisningar"]);
     $app->view->add("take1/footer");
 
     $app->response->setBody([$app->view, "render"])->send();
 });
+
 
 
 $app->router->add("status", function () use ($app) {

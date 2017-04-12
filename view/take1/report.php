@@ -1,9 +1,7 @@
 <main>
-    <div class="contentHeader reportColor">
-        <p class="contentTitle">
-            Redovisningar
-        </p>
-    </div>
+    <?php
+    @include "contentHeader.php";
+    ?>
     <div class="contentBody">
 
         <div class="kmom">

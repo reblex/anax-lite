@@ -1,9 +1,7 @@
 <main>
-    <div class="contentHeader aboutColor">
-        <p class="contentTitle">
-            Om kursen OOPHP
-        </p>
-    </div>
+    <?php
+    @include "contentHeader.php";
+    ?>
     <div class="contentBody">
         <img src="image/code.png" alt="Lines of code" class="codeImg">
 
