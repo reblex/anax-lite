@@ -1,0 +1,45 @@
+<?php
+/**
+ * Config file for the navbar.
+ */
+return [
+    "config" => [
+        "navbar-class" => "navbar"
+    ],
+    "items" => [
+        "more" => [
+            "text" => "Mer",
+            "route" => "#",
+            "dropdown" => [
+                "session" => [
+                    "text" => "Session",
+                    "route" => "session",
+                    "dropdown" => [
+
+                    ]
+                ]
+            ]
+        ],
+        "report" => [
+            "text" => "Redovisningar",
+            "route" => "report",
+            "dropdown" => [
+
+            ]
+        ],
+        "about" => [
+            "text" => "Om",
+            "route" => "about",
+            "dropdown" => [
+
+            ]
+        ],
+        "home" => [
+            "text" => "Hem",
+            "route" => "",
+            "dropdown" => [
+
+            ]
+        ]
+    ],
+];

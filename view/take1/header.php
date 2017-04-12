@@ -5,10 +5,10 @@
 
 <header class="header">
     <div class="headerTop">
-        <div class="logo">
+        <div class="headerLogo">
                 Simon Wahlström
         </div>
-        <?php require "navbar.php"; ?>
+        <?php require ANAX_INSTALL_PATH."/view/navbar/navbar.php"; ?>
     </div>
 </header>
 
