@@ -42,6 +42,105 @@ a:hover {
     background-color: $contrastColor5;
 }
 
+
+.button {
+    min-width: 60px;
+    height: 40px;
+    list-style: none;
+    border-radius: 4px;
+    padding: 4px;
+    @include vertical-align();
+    @include headingFont(22px, $white);
+    text-decoration: none;
+}
+
+.reportBtn {
+    background-color: $contrastColor1;
+
+    &:hover {
+        background-color: darken($contrastColor1, 15%);
+    }
+}
+
+.aboutBtn {
+    background-color: $contrastColor2;
+
+    &:hover {
+        background-color: darken($contrastColor2, 15%);
+    }
+}
+
+.homeBtn {
+    background-color: $contrastColor3;
+
+    &:hover {
+        background-color: darken($contrastColor3, 15%);
+    }
+}
+
+.moreBtn {
+    background-color: $contrastColor4;
+
+    &:hover {
+        background-color: darken($contrastColor4, 15%);
+    }
+}
+
+.sessionBtn {
+    background-color: $contrastColor5;
+
+    &:hover {
+        background-color: darken($contrastColor5, 15%);
+    }
+}
+
+
+
+.sessionContent {
+    width: 100%;
+    overflow: hidden;
+    .sessionNav {
+        width: 180px;
+        padding: 0 8px;
+        padding-top: 28px;
+        margin: 0;
+        border-radius: 12px 12px 12px 12px;
+        background-color: $mainColor;
+        float: left;
+
+        a {
+            text-decoration: none;
+        }
+
+        .button {
+            margin-top: 24px;
+        }
+    }
+
+    .info {
+        overflow: auto;
+        padding-top: 40px;
+        text-align: center;
+
+        .title {
+            width: 60%;
+            margin: auto;
+            @include headingFont(26px, $mainColor);
+        }
+
+        .number {
+            height: 120px;
+            width: 120px;
+            text-align: center;
+            margin: auto;
+            margin-top: 60px;
+            @include headingFont(56px, $mainColor);
+        }
+    }
+}
+
+
+
 .meImg {
     float: right;
     margin-left: 20px;
@@ -222,7 +321,6 @@ blockquote {
         }
     }
 }
-
 
 .footer {
     background: $mainColor;

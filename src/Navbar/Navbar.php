@@ -39,11 +39,12 @@ class Navbar implements \Anax\Common\ConfigureInterface
                 $html.= "<ul>";
                 foreach ($vars["dropdown"] as $dropName => $dropVars) {
                     $dropUrl = $urlCreate->create($dropVars["route"]);
+                    $dropCurr = $route == $dropVars["route"] ? 'current' : '';
                     $dropText = $dropVars["text"];
 
                     $html .= "<li class='drop $dropName'>";
                     $html .= "<div class='navCircle ${dropName}Color'></div>";
-                    $html .= "<a href='$dropUrl'>$dropText</a>";
+                    $html .= "<a class='$dropCurr' href='$dropUrl'>$dropText</a>";
                     $html .= "</li>";
                 }
                 $html.= "</ul>";

@@ -29,6 +29,9 @@ $app->navbar->configure("navbar.php");
 
 // Start the session.
 $app->session->start();
+if (!$app->session->has("number")) {
+    $app->session->set("number", 1);
+}
 
 // Inject $app into the view container for use in view files.
 $app->view->setApp($app);

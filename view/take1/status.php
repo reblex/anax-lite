@@ -5,14 +5,12 @@
 
     <div class="contentBody">
         <div class="sessionContent">
-            <?php
-            @include "buttons.php";
-            ?>
+            <?= @include "buttons.php" ?>
             <div class="info">
                 <span class="title">
-                    The value of the session variable "number" is currently..
+                    Status JSON..
                 </span>
-                <div class="number"><?= $number ?></div>
+                <?= $statusData ?>
             </div>
 
         </div>
