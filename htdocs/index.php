@@ -23,14 +23,22 @@ $app->url = new \Anax\Url\Url();
 $app->router = new \Anax\Route\RouterInjectable();
 $app->view = new \Anax\View\ViewContainer();
 
+// $game = new \Knutte\DiceGame\Game();
 
 // Configure the navbar.
 $app->navbar->configure("navbar.php");
 
 // Start the session.
 $app->session->start();
+
 if (!$app->session->has("number")) {
     $app->session->set("number", 1);
+}
+
+// $game = new \Knutte\DiceGame\Game();
+if (!$app->session->has("game")) {
+    $game = new \Knutte\DiceGame\Game();
+    $app->session->set("game", $game);
 }
 
 // Inject $app into the view container for use in view files.

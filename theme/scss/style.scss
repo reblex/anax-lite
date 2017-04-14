@@ -42,6 +42,10 @@ a:hover {
     background-color: $contrastColor5;
 }
 
+.diceColor {
+    background-color: $contrastColor6;
+}
+
 
 .button {
     min-width: 60px;
@@ -94,6 +98,13 @@ a:hover {
     }
 }
 
+.stopBtn {
+    background-color: $contrastColor6;
+
+    &:hover {
+        background-color: darken($contrastColor6, 15%);
+    }
+}
 
 
 .sessionContent {
@@ -139,6 +150,63 @@ a:hover {
     }
 }
 
+
+.diceGameArea {
+    .scores {
+        width: 30%;
+        min-height: 260px;
+        float: left;
+
+        .title {
+            background-color: $mainColor;
+            width: 100%;
+            @include headingFont(30px, $white);
+            text-align: center;
+        }
+
+        span {
+            clear: both;
+            @include headingFont(26px, $mainColor);
+        }
+    }
+
+    .game {
+        // float: left;
+        min-height: 400px;
+        overflow: auto;
+        padding-left: 20px;
+
+        span {
+            clear: both;
+            @include headingFont(26px, $mainColor);
+
+            &.status {
+                margin-left: 10px;
+                font-size: 20px;
+            }
+
+            i {
+                font-size: 22px;
+            }
+        }
+
+
+        //Buttons
+        a {
+            li {
+                float: left;
+                width: 120px;
+                margin-left: 20px;
+                text-align: center;
+                margin-top: 20px;
+
+                &:last-child {
+                    clear: right;
+                }
+            }
+        }
+    }
+}
 
 
 .meImg {

@@ -17,6 +17,13 @@ return [
                     "dropdown" => [
 
                     ]
+                ],
+                "dice" => [
+                    "text" => "Tärningsspel",
+                    "route" => "dice",
+                    "dropdown" => [
+                        
+                    ]
                 ]
             ]
         ],
