@@ -35,7 +35,6 @@ if (!$app->session->has("number")) {
     $app->session->set("number", 1);
 }
 
-// $game = new \Knutte\DiceGame\Game();
 if (!$app->session->has("game")) {
     $game = new \Knutte\DiceGame\Game();
     $app->session->set("game", $game);
