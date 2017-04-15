@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <title><?= $title ?></title>
-<link rel="stylesheet" href="/dbwebb-kurser/oophp/me/anax-lite/theme/compiled/style.min.css">
+<link rel="stylesheet" href="../theme/compiled/style.min.css">
 <!-- "<?=ANAX_INSTALL_PATH?>/theme/compiled/style.min.css" -->
 
 <header class="header">
