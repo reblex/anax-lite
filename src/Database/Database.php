@@ -1,0 +1,145 @@
+<?php
+
+namespace Knutte\Database;
+
+class Database implements \Anax\Common\ConfigureInterface
+{
+    use \Anax\Common\ConfigureTrait;
+
+    private $pdo;
+
+
+    /**
+     * Private Functions
+     */
+
+
+    /**
+     * Execute SQL with optional parameters.
+     * @param  string $sql    Statement to execute.
+     * @param  array  $params Values to match ? in statement.
+     * @return PDOStatementHandler
+     */
+    private function execute($sql, $params = [])
+    {
+        $sth = $this->pdo->prepare($sql);
+        if (!$sth) {
+            $this->statementException($sth, $sql, $params);
+        }
+
+        $status = $sth->execute($params);
+        if (!$status) {
+            $this->statementException($sth, $sql, $params);
+        }
+        return $sth;
+    }
+
+
+    /**
+     * Do SELECT with optional parameters and return a resultset.
+     * @param  string $sql    Statement to execute.
+     * @param  array  $params Parameters to match ? in statement.
+     * @return array with resultset.
+     */
+    private function executeFetchAll($sql, $params = [])
+    {
+        $sth = $this->execute($sql, $params);
+        $res = $sth->fetchAll();
+        if ($res === false) {
+            $this->statementException($sth, $sql, $params);
+        }
+        return $res;
+    }
+
+
+    private function statementException($sth, $sql, $params)
+    {
+        throw new \Exception(
+            $sth->errorInfo()[2]
+            . "<br><br>SQL ("
+            . substr_count($sql, "?")
+            . " params):<br><pre>$sql</pre><br>PARAMS ("
+            . count($params)
+            . "):<br><pre>"
+            . implode($params, "\n")
+            . "</pre>"
+            . ((count(array_filter(array_keys($params), 'is_string')) > 0)
+                ? "WARNING your params array has keys, should only have values."
+                : null)
+        );
+    }
+
+    /**
+     * Public Functions
+     */
+
+
+
+
+    /**
+     * Connect to database.
+     * @param  array $config Array with options for connecting.
+     * @return void
+     */
+    public function connect()
+    {
+        try {
+            $this->pdo = new \PDO(...array_values($this->config));
+            $this->pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            echo "Could not connect to database.<br>$e";
+        }
+    }
+
+
+    /**
+     * Add a user to the database.
+     * @param string $username Username.
+     * @param string $pass     Encrypted password.
+     */
+    public function addUser($username, $password, $email)
+    {
+        $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?);";
+        self::execute($sql, [$username, $password, $email]);
+    }
+
+
+    /**
+     * Return hashed user password.
+     * @param  string $username Username of user.
+     * @return Hashed password.
+     */
+    public function getHash($username)
+    {
+        $sql = "SELECT password FROM users WHERE username=?;";
+        $res = self::executeFetchAll($sql, [$username]);
+        return $res[0]->password;
+    }
+
+
+    /**
+     * Change the password of a user.
+     * @param  string $username Username of user
+     * @param  string $pass     New hashed password
+     * @return void
+     */
+    public function changePassword($username, $password)
+    {
+        $sql = "UPDATE users SET password=? WHERE username=?;";
+        self::execute($sql, [$password, $username]);
+    }
+
+
+    /**
+     * Check if user with $username exists in the database.
+     * @param  string $username Username of user.
+     * @return Boolean value if user exists.
+     */
+    public function exists($username)
+    {
+        $sql = "SELECT * FROM users WHERE username=?;";
+        $res = self::executeFetchAll($sql, [$username]);
+
+        return isset($res[0]);
+    }
+}

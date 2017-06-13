@@ -17,16 +17,21 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 $app = new \Knutte\App\App();
 $app->navbar = new \Knutte\Navbar\Navbar();
 $app->session = new \Knutte\Session\Session();
+$app->cookie = new \Knutte\Cookie\Cookie();
+$app->db = new \Knutte\Database\Database();
+
 $app->request = new \Anax\Request\Request();
 $app->response = new \Anax\Response\Response();
 $app->url = new \Anax\Url\Url();
 $app->router = new \Anax\Route\RouterInjectable();
 $app->view = new \Anax\View\ViewContainer();
 
-// $game = new \Knutte\DiceGame\Game();
-
 // Configure the navbar.
 $app->navbar->configure("navbar.php");
+
+// Confige and connect to the database.
+$app->db->configure("database.php");
+$app->db->connect();
 
 // Start the session.
 $app->session->start();
@@ -59,11 +64,6 @@ $app->url->setScriptName($app->request->getScriptName());
 // Update url configuration with values from config file.
 $app->url->configure("url.php");
 $app->url->setDefaultsFromConfiguration();
-
-// Navbar stuff for laterz
-// $app->navbar = new \Knutte\Navbar\Navbar();
-// $app->navbar->configure("navbar.php");
-
 
 
 // Load the routes

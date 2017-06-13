@@ -3,7 +3,7 @@
     @include "contentHeader.php";
     ?>
     <div class="contentBody">
-        <img src="image/code.png" alt="Lines of code" class="codeImg">
+        <img src="img/code.png" alt="Lines of code" class="codeImg">
 
         Kursen OOPHP handlar om scriptingspråket PHP och hur det används
         objektorienterat. Under kursens gång byggs ett mini-ramverk

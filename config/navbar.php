@@ -14,39 +14,34 @@ return [
                 "session" => [
                     "text" => "Session",
                     "route" => "session",
-                    "dropdown" => [
-
-                    ]
+                    "dropdown" => []
                 ],
                 "dice" => [
                     "text" => "Tärningsspel",
                     "route" => "dice",
-                    "dropdown" => [
-                        
-                    ]
-                ]
+                    "dropdown" => []
+                ],
             ]
+        ],
+        "account" => [
+            "text" => "Konto",
+            "route" => "account/login",
+            "dropdown" => []
         ],
         "report" => [
             "text" => "Redovisningar",
             "route" => "report",
-            "dropdown" => [
-
-            ]
+            "dropdown" => []
         ],
         "about" => [
             "text" => "Om",
             "route" => "about",
-            "dropdown" => [
-
-            ]
+            "dropdown" => []
         ],
         "home" => [
             "text" => "Hem",
             "route" => "",
-            "dropdown" => [
-
-            ]
+            "dropdown" => []
         ]
     ],
 ];
