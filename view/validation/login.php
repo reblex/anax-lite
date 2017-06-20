@@ -15,6 +15,8 @@ if (isset($user_name) && isset($user_pass)) {
         if (password_verify($user_pass, $hash)) {
             $app->session->set("username", $user_name);
 
+            $app->session->set("rights", $app->db->getRights($user_name));
+
             // Cookie with last login
             if ($app->cookie->has("${user_name}_last_login")) {
                 $app->session->set("${user_name}_last_login", $app->cookie->get("${user_name}_last_login"));
@@ -26,9 +28,9 @@ if (isset($user_name) && isset($user_pass)) {
             $location = $app->url->create('account');
             header("Location: $location");
         } else {
-            echo "Username or Password is incorrect. <a href='login'>Try again.</a>";
+            header("Location: " . $app->url->create('account/login'));
         }
     } else {
-        echo "No such user. <a href='login'>Try again.</a>";
+        header("Location: " . $app->url->create('account/login'));
     }
 }

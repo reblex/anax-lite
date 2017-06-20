@@ -9,10 +9,6 @@ class Database implements \Anax\Common\ConfigureInterface
     private $pdo;
 
 
-    /**
-     * Private Functions
-     */
-
 
     /**
      * Execute SQL with optional parameters.
@@ -20,7 +16,7 @@ class Database implements \Anax\Common\ConfigureInterface
      * @param  array  $params Values to match ? in statement.
      * @return PDOStatementHandler
      */
-    private function execute($sql, $params = [])
+    public function execute($sql, $params = [])
     {
         $sth = $this->pdo->prepare($sql);
         if (!$sth) {
@@ -41,15 +37,15 @@ class Database implements \Anax\Common\ConfigureInterface
      * @param  array  $params Parameters to match ? in statement.
      * @return array with resultset.
      */
-    private function executeFetchAll($sql, $params = [])
-    {
-        $sth = $this->execute($sql, $params);
-        $res = $sth->fetchAll();
-        if ($res === false) {
-            $this->statementException($sth, $sql, $params);
-        }
-        return $res;
-    }
+     public function executeFetchAll($sql, $params = [])
+     {
+         $sth = $this->execute($sql, $params);
+         $res = $sth->fetchAll();
+         if ($res === false) {
+             $this->statementException($sth, $sql, $param);
+         }
+         return $res;
+     }
 
 
     private function statementException($sth, $sql, $params)
@@ -68,12 +64,6 @@ class Database implements \Anax\Common\ConfigureInterface
                 : null)
         );
     }
-
-    /**
-     * Public Functions
-     */
-
-
 
 
     /**
@@ -118,6 +108,41 @@ class Database implements \Anax\Common\ConfigureInterface
 
 
     /**
+     * Return user rights.
+     * @param  string $username Username of user.
+     * @return Rights of user.
+     */
+    public function getRights($username)
+    {
+        $sql = "SELECT rights FROM users WHERE username=?;";
+        $res = self::executeFetchAll($sql, [$username]);
+        return $res[0]->rights;
+    }
+
+    /**
+     * Get data from user with $id on column $column.
+     * @param  string $username     Username of user.
+     * @param  string $column Name of table column.
+     * @return Data from column on row.
+     */
+    public function getUserData($username, $column)
+    {
+        if (self::exists($username)) {
+            $sql = "SELECT $column FROM users WHERE username=?";
+            $res = self::executeFetchAll($sql, [$username]);
+            return $res[0]->$column;
+        }
+    }
+
+    public function setUserData($username, $column, $value)
+    {
+        if (self::exists($username)) {
+            $sql = "UPDATE users SET $column=? WHERE username=?";
+            $res = self::execute($sql, [$value, $username]);
+        }
+    }
+
+    /**
      * Change the password of a user.
      * @param  string $username Username of user
      * @param  string $pass     New hashed password
@@ -127,6 +152,13 @@ class Database implements \Anax\Common\ConfigureInterface
     {
         $sql = "UPDATE users SET password=? WHERE username=?;";
         self::execute($sql, [$password, $username]);
+    }
+
+
+    public function deleteUser($username)
+    {
+        $sql = "DELETE FROM users WHERE username=?";
+        self::execute($sql, [$username]);
     }
 
 

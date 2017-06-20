@@ -12,11 +12,8 @@ $new_account = $app->url->create("account/create_user");
 
 ?>
 <main>
-    <?php
-    @include "contentHeader.php";
-    ?>
     <div class="contentBody">
-        <form action="<?= $app->url->create('account/validate') ?>" method="post">
+        <form action="<?= $app->url->create('validation/login') ?>" method="post">
             <table>
                 <legend><h3>Logga in</h3></legend>
                 <tr>
