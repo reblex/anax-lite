@@ -113,6 +113,50 @@
             </div>
         </div>
 
+        <div class="kmom">
+            <div class="kmomHeader">
+                <div class="title">
+                    Kmom03
+                </div>
+                <div class="date">
+                    <i>20 Juni 2017</i>
+                </div>
+            </div>
+            <div class="text">
+                <b><i>Hur kändes det att jobba med PHP PDO, SQL och MySQL</i></b>
+                <br>
+                Det kändes mycket lärorikt. Jag kan nu i efterhand känna att jag
+                blivit mycket säkrare på att jobba med MySQL och har fått en djupare
+                förståelse för PHP PDO.
+                <br><br>
+                <b><i>Reflektera kring koden du skrev för att lösa uppgifterna,
+                klasser, formulär, integration Anax Lite?</i></b>
+                Detta var ett mycket stort kursmoment och det var mycket som skulle
+                läggas till. Jag kan känna att min kod blev lite rörig eftersom
+                jag inte planerade så mycket. Dock känner jag att jag gjorde det
+                bästa jag kunde i stunden. Jag tyckte att det var ett ganska tungt
+                kursmoment, men jag fick allting att fungera. Jag vill också poängtera
+                att jag endbart skrev en setup-fil för users. I den skapas allt
+                som behövs för både första och andra uppgiften.
+                <br><br>
+                <b><i>Känner du dig hemma i ramverket, dess komponenter och struktur?</i></b>
+                <br>
+                Jag tycker att jag börjar ha ganska bra koll på hur det bör fungera.
+                Dock kan det ibland vara svårt att veta helt var man bör lägga vissa
+                funktioner eller filer, så jag har fått improvisera några gånger.
+                Annars tycker jag att det fungerar ganska bra.
+                <br><br>
+                <b><i>Hur bedömmer du svårighetsgraden på kursens inledadnde
+                kursmoment, känner du att du lär dig något/bra saker?</i></b>
+                <br>
+                Ja, absolut, kursmomenten känns mycket lärorika. Dock vill jag säga
+                att detta kursmomentet kändes väldigt tungt, som att det aldrig tog slut.
+                Det var mycket att lära sig, och det är nog en av de största
+                och svåraste kursmoment jag gjort.
+                <br>
+            </div>
+        </div>
+
     </div>
     <br><br>
 </main>
