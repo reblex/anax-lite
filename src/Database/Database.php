@@ -37,15 +37,15 @@ class Database implements \Anax\Common\ConfigureInterface
      * @param  array  $params Parameters to match ? in statement.
      * @return array with resultset.
      */
-     public function executeFetchAll($sql, $params = [])
-     {
-         $sth = $this->execute($sql, $params);
-         $res = $sth->fetchAll();
-         if ($res === false) {
-             $this->statementException($sth, $sql, $param);
-         }
-         return $res;
-     }
+    public function executeFetchAll($sql, $params = [])
+    {
+        $sth = $this->execute($sql, $params);
+        $res = $sth->fetchAll();
+        if ($res === false) {
+            $this->statementException($sth, $sql, $params);
+        }
+        return $res;
+    }
 
 
     private function statementException($sth, $sql, $params)
@@ -138,7 +138,7 @@ class Database implements \Anax\Common\ConfigureInterface
     {
         if (self::exists($username)) {
             $sql = "UPDATE users SET $column=? WHERE username=?";
-            $res = self::execute($sql, [$value, $username]);
+            self::execute($sql, [$value, $username]);
         }
     }
 

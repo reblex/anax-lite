@@ -12,4 +12,3 @@ $app->db->deleteUser($username);
 
 header("Location: " . $app->url->create("admin/show_all_users"));
 die();
-?>
