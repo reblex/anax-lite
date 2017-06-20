@@ -1,10 +1,22 @@
 <?php
-return [
-    "dsn"             => "mysql:host=localhost;dbname=anax_lite",
-    "username"        => "user",
-    "password"        => "pass",
-    "driver_options"  => null,
-];
+$pos = strpos($_SERVER['REQUEST_URI'], "~siwa15");
+if ($pos == false) {
+    return [
+        "dsn"             => "mysql:host=localhost;dbname=anax_lite",
+        "username"        => "user",
+        "password"        => "pass",
+        "driver_options"  => null,
+    ];
+} else {
+    return [
+        "dsn"             => "mysql:host=blu-ray.student.bth.se;dbname=siwa15",
+        "username"        => "siwa15",
+        "password"        => "pFXiRRTahMW9",
+        "driver_options"  => null,
+    ];
+}
+
+
 
 /**
  * Get value from GET array or return default value.

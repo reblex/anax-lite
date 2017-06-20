@@ -1,7 +1,14 @@
 <!doctype html>
 <meta charset="utf-8">
 <title><?= $title ?></title>
-<link rel="stylesheet" href="/dbwebb-kurser/oophp/me/anax-lite/theme/compiled/style.min.css">
+<?php
+$pos = strpos($_SERVER['REQUEST_URI'], "~siwa15");
+$prepend = "";
+if ($pos != false) {
+    $prepend = "/~siwa15";
+}
+?>
+<link rel="stylesheet" href="<?=$prepend?>/dbwebb-kurser/oophp/me/anax-lite/theme/compiled/style.min.css">
 
 <header class="header">
     <div class="headerTop">
