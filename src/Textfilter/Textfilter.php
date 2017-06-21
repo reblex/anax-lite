@@ -57,7 +57,7 @@ class Textfilter
             '<a href="$1">$1</a>',
             '<a href="$1">$2</a>'
         ];
-        return pregreplace($search, $replace, $text);
+        return preg_replace($search, $replace, $text);
     }
 
 
