@@ -19,6 +19,7 @@ $app->navbar = new \Knutte\Navbar\Navbar();
 $app->session = new \Knutte\Session\Session();
 $app->cookie = new \Knutte\Cookie\Cookie();
 $app->db = new \Knutte\Database\Database();
+$app->tf = new \Knutte\Textfilter\Textfilter();
 
 $app->request = new \Anax\Request\Request();
 $app->response = new \Anax\Response\Response();

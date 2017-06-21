@@ -27,6 +27,15 @@ $app->router->add("report", function () use ($app) {
 });
 
 
+$app->router->add("testTextFilter", function () use ($app) {
+    $app->view->add("take1/header", ["title" => "Redovisning"]);
+    $app->view->add("take1/testTextFilter", ["contentTitle" => "Redovisningar"]);
+    $app->view->add("take1/footer");
+
+    $app->response->setBody([$app->view, "render"])->send();
+});
+
+
 
 $app->router->add("status", function () use ($app) {
     $data = [
