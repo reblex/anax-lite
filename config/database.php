@@ -5,14 +5,14 @@ if ($pos == false) {
         "dsn"             => "mysql:host=localhost;dbname=anax_lite",
         "username"        => "user",
         "password"        => "pass",
-        "driver_options"  => null,
+        "driver_options"  => [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],
     ];
 } else {
     return [
         "dsn"             => "mysql:host=blu-ray.student.bth.se;dbname=siwa15",
         "username"        => "siwa15",
         "password"        => "pFXiRRTahMW9",
-        "driver_options"  => null,
+        "driver_options"  => [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"],
     ];
 }
 
