@@ -157,6 +157,75 @@
             </div>
         </div>
 
+        <div class="kmom">
+            <div class="kmomHeader">
+                <div class="title">
+                    Kmom04
+                </div>
+                <div class="date">
+                    <i>2 Augusti 2017</i>
+                </div>
+            </div>
+            <div class="text">
+                <b><i>
+                    Finns något att säga kring din klass för texfilter, eller
+                    rent allmänt om formattering och filtrering av text som sparas
+                    i databasen av användaren?
+                </i></b>
+                <br>
+                Jag tycker att klassen Textfilter blev mycket bra. Den är tydlig och
+                väl uppdelad. Varje typ av filter har sin egen funktion, och hanteringen
+                av inkommande options sköts enkelt av en loopad switch-sats.
+                <br><br>
+                <b><i>
+                    Berätta hur du tänkte när du strukturerade klasserna och
+                    databasen för webbsidor och bloggposter?
+                </i></b>
+                <br>
+                Jag valde att skapa en klass som heter ContentHandler. Den tolkar
+                vilken typ av content som ska visas och hämtar det från databasen.
+                Sedan skickas den datan för att visas i en view baserad på vad det
+                är för typ av content(page/blog/block). Detta gör att allt går igenom
+                en och samma hantering, och det slipper bli onödigt mycket kod i
+                vyerna.
+            </div>
+            <br><br>
+            <b><i>
+                Förklara vilka routes som används för att demonstrera funktionaliteten
+                för webbsidor och blogg (så att en utomstående kan testa).
+            </i></b>
+            <br>
+            Under content/blog finns alla publicerade blogginlägg. Bara till att
+            klicka på en blog för att komma till den.
+            <br><br>
+            På ett liknande sätt finns under content/pages(notera pages plural)
+            alla publicerade sidor. Där är det också bara till att klicka på en
+            sida för att få den att visas.
+            <br><br>
+            Block har en egen liten testsida under routen content/blockTest.
+            Väldigt simpelt men det demonstrerar hur ett block tas från databasen
+            och skrivs ut som en egen grej på en vald sida, i detta fallet blockTest.
+            <br><br>
+            <b><i>
+                Hur känns det att dokumentera databasen så här i efterhand?
+            </i></b>
+            Det var väldigt enkelt och väldigt smidigt att använda sig av
+            reverse engineering. Jag hade ingen avanserad databas så det blev
+            inte så mycket att visa upp, men lätt var det att arbeta med i alla
+            fall.
+            <br><br>
+            <b><i>
+                Om du är självkritisk till koden du skriver i Anax Lite, ser du
+                förbättringspotential och möjligheter till alternativ struktur av din kod?
+            </i></b>
+            Ja absolut. Jag ville främst få allt att fungera i detta kursmomentet.
+            Det är inte den vackraste kod jag skrivigt och det finns mycket som
+            skulle kunna förbättras. Dock har jag fått med mig det jag tycker är
+            viktigt; att kunna arbeta med en databas för att visa upp och hantera content.
+            Till en annan gång kan jag göra det vackrare med kunskapen jag nu har.
+            <br>
+        </div>
+
     </div>
     <br><br>
 </main>
