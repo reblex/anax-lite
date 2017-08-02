@@ -20,6 +20,7 @@ $app->session = new \Knutte\Session\Session();
 $app->cookie = new \Knutte\Cookie\Cookie();
 $app->db = new \Knutte\Database\Database();
 $app->tf = new \Knutte\Textfilter\Textfilter();
+$app->ch = new \Knutte\ContentHandler\ContentHandler($app->db);
 
 $app->request = new \Anax\Request\Request();
 $app->response = new \Anax\Response\Response();

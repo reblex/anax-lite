@@ -1,6 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <title><?= $title ?></title>
+<script src="https://use.fontawesome.com/e5579368c4.js"></script>
 <?php
 $pos = strpos($_SERVER['REQUEST_URI'], "~siwa15");
 $prepend = "";

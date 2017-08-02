@@ -11,6 +11,11 @@ return [
             "text" => "Mer",
             "route" => "#",
             "dropdown" => [
+                "myContent" => [
+                    "text" => "Content",
+                    "route" => "content",
+                    "dropdown" => []
+                ],
                 "session" => [
                     "text" => "Session",
                     "route" => "session",

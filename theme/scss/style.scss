@@ -54,6 +54,10 @@ a:hover {
     background-color: $contrastColor8;
 }
 
+.myContentColor {
+    background-color: $contrastColor7;
+}
+
 .button {
     min-width: 60px;
     height: 40px;
@@ -373,7 +377,6 @@ blockquote {
 
 .nav li:hover ul {
     display: block;
-
 }
 
 

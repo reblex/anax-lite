@@ -48,6 +48,22 @@ class Database implements \Anax\Common\ConfigureInterface
     }
 
 
+    /**
+     * Do SELECT with optional parameters and return the first row.
+     *
+     * @param string $sql   statement to execute
+     * @param array  $param to match ? in statement
+     *
+     * @return array with first row as resultset
+     */
+    public function executeFetch($sql, $params = [])
+    {
+        $sth = $this->execute($sql, $params);
+        $res = $sth->fetch();
+        return $res;
+    }
+
+
     private function statementException($sth, $sql, $params)
     {
         throw new \Exception(
@@ -173,5 +189,15 @@ class Database implements \Anax\Common\ConfigureInterface
         $res = self::executeFetchAll($sql, [$username]);
 
         return isset($res[0]);
+    }
+
+    /**
+     * Return last insert id from an INSERT.
+     *
+     * @return void
+     */
+    public function lastInsertId()
+    {
+        return $this->pdo->lastInsertId();
     }
 }
